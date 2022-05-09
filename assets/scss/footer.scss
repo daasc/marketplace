@@ -1,0 +1,79 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css); 
+
+/* Rodapé */
+footer {
+    display: flex;
+    flex-direction: column;
+    background-color: #0e0e0e;
+    padding: 50px 20px;
+    align-items: center;
+}
+
+footer ul {
+    display: flex;
+    list-style: none;
+}
+
+footer ul li {
+    padding: 0 10px;
+}
+
+footer ul li a {
+    color: #fff;
+    font-size: 2rem;
+    opacity: 0.8;
+    transition: 0.4s;
+}
+
+footer ul li a:hover {
+    color: #ffff00;
+    opacity: 1;
+}
+
+footer p {
+    color: #fff;
+    font-size: 1.35rem;
+}
+
+footer .left {
+    float: left;
+    width: 50%;
+    text-align: center;
+    align-items: center;
+}
+
+footer .right {
+    margin-top: 30px;
+    width: 50%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    float: right;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+@media (min-width: 900px) {
+    footer {
+        flex-direction: row;
+    }
+
+    footer p {
+        font-size: 1.5rem;
+    }
+
+    footer ul li a {
+        font-size: 2rem
+    }
+
+    footer .left {
+        text-align: left;
+    }
+
+    footer .right {
+        margin-top: 0;
+        justify-content: flex-end;
+        flex-direction: row;
+    }
+}
