@@ -16,11 +16,6 @@
 <script>
 export default {
     name: "FooterComponet",
-    data() {
-        return {
-            
-        }
-    },
 }
 </script>
 <style lang="scss">
