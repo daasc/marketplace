@@ -11,6 +11,7 @@ footer {
 footer ul {
     display: flex;
     list-style: none;
+    padding: 0;
 }
 
 footer ul li {
@@ -25,25 +26,26 @@ footer ul li a {
 footer p {
     color: #000;
     font-size: 14px;
+    margin: 0;
+    padding: 0;
 }
 
 footer .left {
     float: left;
-    width: 50%;
+    width: 100%;
     text-align: center;
     align-items: center;
 }
 
 footer .right {
     margin-top: 10px;
-    width: 50%;
+    width: 100%;
     align-items: center;
     text-align: center;
     justify-content: center;
     float: right;
     display: flex;
     flex-direction: column;
-    height: 100%;
 }
 
 @media (min-width: 900px) {
@@ -51,20 +53,14 @@ footer .right {
         flex-direction: row;
     }
 
-    footer p {
-        font-size: 14px;
-    }
-
-    footer ul li a {
-        font-size: 24px
-    }
-
     footer .left {
         text-align: left;
+        width: 50%;
     }
 
     footer .right {
         margin-top: 0;
+        width: 50%;
         justify-content: flex-end;
         flex-direction: row;
     }
