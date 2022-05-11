@@ -1,10 +1,10 @@
 <template>
-    <FooterComponet></FooterComponet>
+  <FooterComponent></FooterComponent>
 </template>
 <script>
-import FooterComponet from "@/componets/FooterComponet.vue";
+import FooterComponent from '@/components/FooterComponent.vue'
 export default {
-    name: "HomePage",
-    components: { FooterComponet },
+  name: 'HomePage',
+  components: { FooterComponent },
 }
 </script>
