@@ -21,7 +21,7 @@
 </template>
 <script>
 export default {
-  name: 'FooterComponet',
+  name: 'FooterComponent',
 }
 </script>
 <style lang="scss">
