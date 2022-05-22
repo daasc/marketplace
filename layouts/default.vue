@@ -1,7 +1,7 @@
 <template>
   <div>
     <nav-bar-component></nav-bar-component>
-    <Nuxt />
+
     <footer-component></footer-component>
   </div>
 </template>
