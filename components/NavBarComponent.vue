@@ -1,19 +1,37 @@
 <template>
-  <div>
-    <nav>
-      <a class="logo" href="/">Tiger Codes</a>
-      <div class="mobile-menu">
-        <div class="line1"></div>
-        <div class="line2"></div>
-        <div class="line3"></div>
-      </div>
-      <ul class="nav-list">
-        <li><a href="#">Início</a></li>
-        <li><a href="#">Sobre</a></li>
-        <li><a href="#">Projetos</a></li>
-        <li><a href="#">Contato</a></li>
-      </ul>
-    </nav>
+  <div class="container">
+    <input id="check" type="checkbox" />
+    <label id="icone" for="check"></label>
+    <img
+      width="150px"
+      height="82px"
+      class="img"
+      src="https://demo4.drfuri.com/farmart2/wp-content/themes/farmart/images/logo.svg"
+      alt=""
+    />
+    <div class="barra">
+      <nav>
+        <a href="#">
+          <div class="Link">Home</div>
+        </a>
+        <a href="#">
+          <div class="Link">Notícias</div>
+        </a>
+        <a href="#">
+          <div class="Link">Informativos</div>
+        </a>
+        <a href="#">
+          <div class="Link">Curiosidades</div>
+        </a>
+        <a href="#">
+          <div class="Link">Sobre</div>
+        </a>
+      </nav>
+    </div>
+    <label for="menu-hamburguer"></label>
+    <div class="mburg">
+      <span class="hamburguer"></span>
+    </div>
   </div>
 </template>
 <script>
@@ -22,115 +40,171 @@ export default {
 }
 </script>
 <style scoped>
-* {
-  margin: 0;
-  padding: 0;
+template {
+  justify-items: right;
 }
-
-a {
-  color: #fff;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-a:hover {
-  opacity: 0.7;
-}
-
-.logo {
-  font-size: 24px;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-}
-
-nav {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
-  background: #23232e;
-  height: 8vh;
-}
-
-main {
-  background: url('bg.jpg') no-repeat center center;
-  background-size: cover;
-  height: 92vh;
-}
-
-.nav-list {
-  list-style: none;
-  display: flex;
-}
-
-.nav-list li {
-  letter-spacing: 3px;
-  margin-left: 32px;
-}
-
-.mobile-menu {
+input {
   display: none;
-  cursor: pointer;
+}
+a {
+  display: none;
+}
+.img {
+  margin-left: 31px;
+  margin-top: 14px;
+}
+.container {
+  height: 120px;
+  width: 100%;
 }
 
-.mobile-menu div {
-  width: 32px;
-  height: 2px;
-  background: #fff;
-  margin: 8px;
-  transition: 0.3s;
-}
-
-@media (max-width: 999px) {
+@media (max-width: 1100px) {
+  .menu {
+    background: #ffffff;
+    width: 100%;
+    height: 37px;
+    padding: 30px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  .img {
+    margin-left: 38%;
+  }
+  #logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
   body {
+    background-color: #ffffff;
+    font-family: 'Just Another Hand', cursive;
     overflow-x: hidden;
   }
-  .nav-list {
+
+  #check {
+    display: none;
+  }
+
+  #icone {
+    cursor: pointer;
+    padding: 32px;
+    position: fixed;
+    z-index: 1;
+
+    border: 1px #fff solid;
+    top: 20px;
+    left: 20px;
+  }
+
+  .barra {
+    background-color: #ffffff;
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    transition: all 0.2s linear;
+    left: -250px;
+  }
+
+  nav {
+    width: 100%;
     position: absolute;
-    top: 8vh;
-    right: 0;
-    width: 50vw;
-    height: 92vh;
-    background: #23232e;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in;
+    top: 80px;
   }
-  .nav-list li {
-    margin-left: 0;
+
+  nav a {
+    text-decoration: none;
+  }
+
+  .Link {
+    background-color: #ffffff;
+    padding: 20px;
+    font-family: 'Gotham';
+    font-size: 12pt;
+    transition: all 0.3s linear;
+    color: #000000;
     opacity: 0;
   }
-  .mobile-menu {
-    display: block;
-  }
-}
 
-.nav-list.active {
-  transform: translateX(0);
-}
-
-@keyframes navLinkFade {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
+  .Link:hover {
+    background-color: #dfcfcf;
+    color: #ff0000;
   }
-  to {
+
+  #check:checked ~ .barra {
+    transform: translateX(250px);
+  }
+
+  #check:checked ~ .barra nav a .Link {
     opacity: 1;
-    transform: translateX(0);
+    transition-delay: 0.1s;
   }
-}
 
-.mobile-menu.active .line1 {
-  transform: rotate(-45deg) translate(-8px, 8px);
-}
+  #banner1 {
+    padding-top: 97px;
+    width: 100%;
+  }
 
-.mobile-menu.active .line2 {
-  opacity: 0;
-}
+  .mburg {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    top: 25px;
+    left: 25px;
+  }
 
-.mobile-menu.active .line3 {
-  transform: rotate(45deg) translate(-5px, -7px);
+  .hamburguer {
+    position: relative;
+    display: block;
+    background: rgb(0, 0, 0);
+    width: 20px;
+    height: 0.5px;
+    top: 16px;
+    transition: 0.5s ease-in-out;
+    border-radius: 6px;
+  }
+
+  .hamburguer:before,
+  .hamburguer:after {
+    background: rgb(0, 0, 0);
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: 0.5s ease-in-out;
+  }
+
+  .hamburguer:before {
+    top: -5px;
+    border-radius: 6px;
+  }
+
+  .hamburguer:after {
+    bottom: -6px;
+    border-radius: 6px;
+  }
+
+  input {
+    display: none;
+  }
+
+  input:checked ~ label .hamburguer {
+    transform: rotate(45deg);
+    top: 8px;
+  }
+
+  input:checked ~ label .hamburguer:before {
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+
+  input:checked ~ label .hamburguer:after {
+    transform: rotate(90deg);
+    top: 8px;
+  }
 }
 </style>
