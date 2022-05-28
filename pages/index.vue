@@ -1,7 +1,6 @@
 <template>
-  <div><h1>testando</h1></div>
+<h1>Eae</h1>
 </template>
-
 <script>
 export default {
   name: 'IndexPage',
