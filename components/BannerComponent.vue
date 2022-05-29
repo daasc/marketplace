@@ -1,13 +1,13 @@
 <template>
   <section class="banner">
-    <div ref="slide" class="slide">
+    <div id="slide" class="slide">
       <div class="info">
-        <p ref="title" class="title">
+        <p id="title" class="title">
           Active Summer With
           <br />
           Juice Milk 300ml
         </p>
-        <p ref="description" class="description">
+        <p id="description" class="description">
           New arrivals with naturre fruits, juice,
           <br />
           milks, essential for summer
@@ -17,10 +17,10 @@
         </div>
       </div>
       <div class="arrows">
-        <button ref="back" class="btn" @click="back()">
+        <button id="back" class="btn" @click="back()">
           <i class="fa-solid fa-angle-left"></i>
         </button>
-        <button ref="next" class="btn" @click="next()">
+        <button id="next" class="btn" @click="next()">
           <i class="fa-solid fa-angle-right"></i>
         </button>
       </div>
@@ -43,75 +43,91 @@
 <script>
 export default {
   name: 'BannerComponent',
-}
-const imgs = ['imagens/slide1.jpg', 'imagens/slide2.jpg']
-let count = 1
-let pass = true
-
-setInterval(function () {
-  if (pass) {
-    count = count + 1
-    if (count > imgs.length) {
-      count = 1
+  data() {
+    return {
+      images: ['assets/images/slide1.jpg', 'assets/images/slide2.jpg'],
+      count: 1,
+      pass: true,
+      carouselInterval: null,
     }
-    document.getElementById('slide').style.backgroundImage =
-      'url(' + imgs[count - 1] + ')'
-    update()
-    button_disabled()
-  } else {
-    pass = true
-  }
-}, 10000)
-
-function next() {
-  count = count + 1
-  if (count > imgs.length) {
-    count = 1
-  }
-  pass = false
-  document.getElementById('slide').style.backgroundImage =
-    'url(' + imgs[count - 1] + ')'
-  update()
-  button_disabled()
-}
-
-function back() {
-  count = count - 1
-  if (count <= 0) {
-    count = 2
-  }
-  pass = false
-  document.getElementById('slide').style.backgroundImage =
-    'url(' + imgs[count - 1] + ')'
-  update()
-  button_disabled()
-}
-
-function update() {
-  if (imgs[count - 1] == 'imagens/slide2.jpg') {
-    document.getElementById('title').style.color = '#FFF'
-    document.getElementById('description').style.color = '#FFF'
-    document.getElementById('title').innerHTML = 'Farmart<br>Food Takeaway'
-  } else if (imgs[count - 1] == 'imagens/slide1.jpg') {
-    document.getElementById('title').style.color = '#000'
-    document.getElementById('description').style.color = '#000'
-    document.getElementById('title').innerHTML =
-      'Active Summer With<br>Juice Milk 300ml'
-  }
-}
-
-function button_disabled() {
-  document.getElementById('back').disabled = true
-  document.getElementById('next').disabled = true
-  setTimeout(function () {
-    document.getElementById('back').disabled = false
-    document.getElementById('next').disabled = false
-  }, 500)
+  },
+  mounted() {
+    this.startInterval()
+  },
+  methods: {
+    startInterval() {
+      this.carouselInterval = setInterval(() => {
+        if (this.pass) {
+          this.count = this.count + 1
+          if (this.count > this.images.length) {
+            this.count = 1
+          }
+          // eslint-disable-next-line nuxt/no-globals-in-created
+          document.getElementById('slide').style.backgroundImage =
+            'url(' + this.images[this.count - 1] + ')'
+          this.update()
+          this.buttonDisabled()
+        } else {
+          this.pass = true
+        }
+      }, 10000)
+    },
+    buttonDisabled() {
+      document.getElementById('back').disabled = true
+      document.getElementById('next').disabled = true
+      setTimeout(function () {
+        document.getElementById('back').disabled = false
+        document.getElementById('next').disabled = false
+      }, 500)
+    },
+    updateValues({ colorTitle, colorDescription, textTitle }) {
+      document.getElementById('title').style.color = colorTitle
+      document.getElementById('description').style.color = colorDescription
+      document.getElementById('title').innerHTML = textTitle
+    },
+    update() {
+      if (this.images[this.count - 1] === 'images/slide2.jpg') {
+        this.updateValues({
+          colorTitle: '#FFF',
+          colorDescription: '#FFF',
+          textTitle: 'Farmart<br>Food Takeaway',
+        })
+      } else if (this.images[this.count - 1] === 'images/slide1.jpg') {
+        this.updateValues({
+          colorTitle: '#000',
+          colorDescription: '#000',
+          textTitle: 'Active Summer With<br>Juice Milk 300ml',
+        })
+      }
+    },
+    back() {
+      this.count = this.count - 1
+      if (this.count <= 0) {
+        this.count = 2
+      }
+      this.pass = false
+      document.getElementById('slide').style.backgroundImage =
+        'url(' + this.images[this.count - 1] + ')'
+      this.update()
+      this.buttonDisabled()
+    },
+    next() {
+      this.count = this.count + 1
+      if (this.count > this.images.length) {
+        this.count = 1
+      }
+      this.pass = false
+      document.getElementById('slide').style.backgroundImage =
+        'url(' + this.images[this.count - 1] + ')'
+      this.update()
+      this.buttonDisabled()
+    },
+  },
 }
 </script>
-<style scope>
+<style scoped>
 .banner {
-  background-image: url(assets/imagens/backgroud.jpg);
+  background-image: url(@/assets/images/backgroud.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
@@ -126,7 +142,7 @@ function button_disabled() {
   display: flex;
   min-height: 52vh;
   flex-basis: 100%;
-  background-image: url(assets/imagens/slide1.jpg);
+  background-image: url(@/assets/images/slide1.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -199,7 +215,7 @@ function button_disabled() {
   background-color: #fac250;
   min-height: 40vh;
   flex-basis: 100%;
-  background-image: url(assets/imagens/saleoff.jpg);
+  background-image: url(@/assets/images/saleoff.jpg);
   background-position: bottom right;
   background-repeat: no-repeat;
   border-radius: 10px;
