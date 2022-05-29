@@ -45,7 +45,10 @@ export default {
   name: 'BannerComponent',
   data() {
     return {
-      images: ['assets/images/slide1.jpg', 'assets/images/slide2.jpg'],
+      images: [
+        'https://i.ibb.co/JR1w3cP/slide1.jpg',
+        'https://i.ibb.co/CBTYCM2/slide2.jpg',
+      ],
       count: 1,
       pass: true,
       carouselInterval: null,
@@ -86,13 +89,17 @@ export default {
       document.getElementById('title').innerHTML = textTitle
     },
     update() {
-      if (this.images[this.count - 1] === 'images/slide2.jpg') {
+      if (
+        this.images[this.count - 1] === 'https://i.ibb.co/CBTYCM2/slide2.jpg'
+      ) {
         this.updateValues({
           colorTitle: '#FFF',
           colorDescription: '#FFF',
           textTitle: 'Farmart<br>Food Takeaway',
         })
-      } else if (this.images[this.count - 1] === 'images/slide1.jpg') {
+      } else if (
+        this.images[this.count - 1] === 'https://i.ibb.co/JR1w3cP/slide1.jpg'
+      ) {
         this.updateValues({
           colorTitle: '#000',
           colorDescription: '#000',

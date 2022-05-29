@@ -2,7 +2,7 @@
   <div>
     <!-- deve add um navbar aqui -->
     <Nuxt />
-    <BannerComponent></BannerComponent>
+    <banner-component></banner-component>
     <footer-component></footer-component>
   </div>
 </template>
