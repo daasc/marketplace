@@ -218,6 +218,9 @@ export default {
   .checkbox-menu {
     opacity: 0;
   }
+  .min-icon svg {
+    color: black;
+  }
   .label-menu {
     position: absolute;
     cursor: pointer;
