@@ -103,14 +103,84 @@ export default {
 }
 </script>
 <style scoped>
+.car-content {
+  justify-content: flex-end;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.car-text {
+  display: flex;
+  flex-direction: column;
+}
+.menu-go-back span {
+  display: none;
+}
+
+.div-img {
+  margin-top: 35px;
+  margin-left: 20%;
+}
+
+.img {
+  width: 155px;
+  height: 55px;
+}
+
+.min-icon {
+  vertical-align: -0.125em;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  fill: currentColor;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #eee;
+  position: relative;
+  background-color: #fff;
+  height: 125px;
+}
+
+.container-left {
+  display: flex;
+  flex-direction: row;
+}
+
+.menu-mobile {
+  display: none;
+}
+
+.container-right {
+  flex: 1;
+  text-align: right;
+  justify-content: flex-end;
+}
+.car-icon {
+  color: black;
+  width: 1em;
+  height: 1em;
+}
+.min-icon span svg {
+  vertical-align: -0.125em;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  fill: currentColor;
+}
+
 @media (max-width: 1199px) {
   * {
     padding: 0px;
     margin: 0px;
   }
+
   ul {
     list-style: none;
   }
+
   .container {
     display: flex;
     flex-direction: row;
@@ -118,24 +188,31 @@ export default {
     position: relative;
     background-color: #fff;
     height: 82px;
+    color: black;
   }
+
   .container-left {
     display: flex;
     flex-direction: row;
   }
+
   .container-right {
-    flex: 1;
     text-align: right;
     justify-content: flex-end;
+    flex: inherit;
+    padding-left: 30px;
   }
+
   .img {
     width: 150px;
     height: 50px;
   }
+
   .div-img {
     margin-left: 149%;
     margin-top: 17px;
   }
+
   .min-icon {
     vertical-align: -0.125em;
     width: 1em;
@@ -143,19 +220,24 @@ export default {
     display: inline-block;
     fill: currentColor;
   }
+
   .car-content {
     display: flex;
     align-items: center;
     justify-content: right;
   }
+
   .car-text {
     display: flex;
     flex-direction: column;
+    color: black;
   }
+
   .car-icon {
     display: flex;
     flex-direction: column;
   }
+
   .menu-mobile {
     height: 100%;
     width: 25px;
@@ -164,17 +246,18 @@ export default {
     justify-content: left;
     margin-left: 19px;
   }
-  .menu-mobile input:checked {
-  }
+
   .menu-mobile label {
     position: relative;
     z-index: 1;
     margin-top: 19px;
   }
+
   .menu-nav ul {
     position: absolute;
     width: 100%;
   }
+
   .menu-go-back {
     vertical-align: -0.125em;
     width: 1.4em;
@@ -184,6 +267,7 @@ export default {
     margin-left: 19px;
     margin-top: 19px;
   }
+
   .menu-box {
     width: 78%;
     height: 100%;
@@ -192,20 +276,24 @@ export default {
     color: black;
     background-color: white;
   }
+
   .menu-box nav {
     padding: 25px 20px 28px;
     width: 78%;
   }
+
   .menu-box li {
     border-bottom: 1px solid #eee;
     padding: 20px 0;
     width: 97%;
   }
+
   input:checked ~ .menu-box {
     left: 0;
     margin-top: 0;
     position: fixed;
   }
+
   input:checked ~ .menu-box div {
     background-color: #fab528;
     width: 100%;
@@ -215,12 +303,15 @@ export default {
   .menu-mobile input {
     display: none;
   }
+
   .checkbox-menu {
     opacity: 0;
   }
+
   .min-icon svg {
     color: black;
   }
+
   .label-menu {
     position: absolute;
     cursor: pointer;
@@ -229,6 +320,7 @@ export default {
     height: 22px;
     width: 30px;
   }
+
   .label-menu span {
     position: absolute;
     display: block;
@@ -239,6 +331,7 @@ export default {
     background: #000000;
     transition: 0.25s ease-in-out;
   }
+
   .label-menu span:nth-child(1) {
     top: 0;
     width: 19px;
@@ -253,6 +346,7 @@ export default {
     top: 12px;
     width: 19px;
   }
+
   #checkbox-menu:checked + label span:nth-child(1) {
     display: none;
   }
