@@ -1,4 +1,5 @@
-@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css);
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap');
 
 * {
   margin: 0;
@@ -7,4 +8,5 @@
 
 html {
   scroll-behavior: smooth;
+  font-family: 'Mulish', sans-serif;
 }
