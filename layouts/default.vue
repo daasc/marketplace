@@ -1,8 +1,8 @@
 <template>
   <div>
     <!-- deve add um navbar aqui -->
-    <Nuxt />
     <banner-component></banner-component>
+    <Nuxt />
     <footer-component></footer-component>
   </div>
 </template>
