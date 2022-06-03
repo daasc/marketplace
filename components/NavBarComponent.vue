@@ -110,13 +110,22 @@ export default {
   align-items: center;
 }
 .car-text {
-  display: flex;
-  flex-direction: column;
+  margin-left: 12px;
+  line-height: 1;
 }
 .menu-go-back span {
   display: none;
 }
-
+bdi {
+  unicode-bidi: isolate;
+}
+.title {
+  line-height: 1;
+  display: block;
+  margin-bottom: 7px;
+  font-size: 11px;
+  color: #777;
+}
 .div-img {
   margin-top: 35px;
   margin-left: 20%;
@@ -126,11 +135,15 @@ export default {
   width: 155px;
   height: 55px;
 }
+svg:not(:root) {
+  overflow: hidden;
+}
 
-.min-icon {
+.min-icon,
+svg {
   vertical-align: -0.125em;
-  width: 1em;
-  height: 1em;
+  width: 2em;
+  height: 2em;
   display: inline-block;
   fill: currentColor;
 }
@@ -138,30 +151,43 @@ export default {
 .container {
   display: flex;
   flex-direction: row;
-  border-bottom: 1px solid #eee;
-  position: relative;
+
   background-color: #fff;
-  height: 125px;
+
+  padding-left: 30px;
+  padding-right: 30px;
+  display: flex;
+  align-items: center;
+  padding: 38.5px 0;
 }
 
 .container-left {
   display: flex;
   flex-direction: row;
 }
-
+.container-center {
+  width: 50%;
+  height: 50%;
+}
 .menu-mobile {
   display: none;
 }
 
 .container-right {
-  flex: 1;
   text-align: right;
   justify-content: flex-end;
+  flex: inherit;
+  padding-left: 30px;
+  width: 40.5%;
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 .car-icon {
-  color: black;
-  width: 1em;
-  height: 1em;
+  position: relative;
+  padding: 0 10px;
+  display: block;
+  line-height: 1;
 }
 .min-icon span svg {
   vertical-align: -0.125em;
@@ -169,6 +195,21 @@ export default {
   height: 1em;
   display: inline-block;
   fill: currentColor;
+}
+.min-intem {
+  position: absolute;
+  right: 0;
+  top: -10px;
+  display: block;
+  text-align: center;
+  background-color: orange;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: 700;
+  color: black;
+  padding: 5px 5px 3px;
+  line-height: 1;
+  min-width: 18px;
 }
 
 @media (max-width: 1199px) {
