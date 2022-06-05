@@ -12,13 +12,26 @@
         :description="item.description"
       ></CardCategory>
     </section>
+
+    <section>
+      <CardProduct
+        v-for="(item, index) in products"
+        :key="index"
+        :name="item.name"
+        :url-image="item.urlImage"
+        :price="item.price"
+        :weight="item.weight"
+      ></CardProduct>
+    </section>
   </div>
 </template>
 <script>
 import ButtonNextAndPrevByCategory from '~/components/ButtonNextAndPrevByCategory.vue'
+import CardCategory from '~/components/CardCategory.vue'
+import CardProduct from '~/components/CardProduct.vue'
 export default {
   name: 'HomePage',
-  components: { ButtonNextAndPrevByCategory },
+  components: { ButtonNextAndPrevByCategory, CardCategory, CardProduct },
   layout: 'default',
   data() {
     return {
@@ -27,6 +40,15 @@ export default {
           urlImage:
             'https://i0.wp.com/demo4.drfuri.com/farmart2/wp-content/uploads/sites/11/2021/05/homepage-new-cat-1.png?resize=100%2C86&ssl=1',
           description: 'description',
+        },
+      ],
+      products: [
+        {
+          name: 'Vimto Squash Remix Apple 1.5',
+          urlImage:
+            'https://i0.wp.com/demo4.drfuri.com/farmart2/wp-content/uploads/sites/11/2020/02/08_3a.jpg?resize=600%2C600&ssl=1',
+          weight: 456,
+          price: 6.9,
         },
       ],
     }
