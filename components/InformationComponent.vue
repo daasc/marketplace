@@ -1,20 +1,22 @@
 <template>
-  <section class="informationArea">
-    <div class="informationContent">
-      <div class="informationRow">
-        <div class="cardContact">
-          <div class="cardContactContent">
-            <div class="cardContactTitle">
+
+  <section class="information-area">
+    <hr/>
+    <div class="information-content">
+      <div class="information-row">
+        <div class="card-contact">
+          <div class="card-contact-content">
+            <div class="card-contact-title">
               <h2>Farmart – Your Online Foods & Grocery</h2>
             </div>
-            <div class="cardContactDescription">
+            <div class="card-contact-description">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                 finibus viverra iaculis. Etiam vulputate et justo eget
                 scelerisque.
               </p>
             </div>
-            <div class="cardContactInfo">
+            <div class="card-contact-info">
               <ul>
                 <li>
                   <span class="material-symbols-outlined"> call </span>
@@ -34,8 +36,8 @@
             </div>
           </div>
         </div>
-        <div class="cardMenu">
-          <div class="cardMenuContent">
+        <div class="card-menu">
+          <div class="card-menu-content">
             <div class="menu">
               <h2>Useful Links</h2>
               <ul>
@@ -72,15 +74,16 @@
             </div>
           </div>
         </div>
-        <div class="cardForm">
-          <div class="cardFormContent">
+        <div class="card-form">
+          <div class="card-form-content">
             <h2>Farmart Newsletter</h2>
-            <p class="formDescription">
+            <p class="form-description">
               Register now to get updates on promotions and coupns. Dont worry!
               We not spam
             </p>
             <form method="" action="#">
               <label>
+                <span class="material-symbols-outlined"> mail </span>
                 <input
                   type="email"
                   autocomplete="off"
@@ -94,6 +97,7 @@
         </div>
       </div>
     </div>
+    <hr/>
   </section>
 </template>
 <script>
@@ -102,28 +106,35 @@ export default {
 }
 </script>
 <style scoped>
-.informationArea {
+.information-area {
   max-width: 100%;
   width: 100%;
   height: auto;
   display: flex;
   box-sizing: inherit;
+  flex-direction: column;
+
 }
-.informationContent {
+.information-area hr{
+  width: 100%;
+  color:#fafafa
+}
+.information-content {
   width: 100%;
   height: 100%;
   align-items: center;
   justify-content: center;
   flex-wrap: nowrap;
+  padding:50px 0px;
 }
-.informationRow {
+.information-row {
   display: flex;
   flex-wrap: nowrap;
 
   font-family: var(--fontFamily);
   color: var(--fontColor);
 }
-.cardContact {
+.card-contact {
   display: flex;
   max-width: 41%;
   height: 100%;
@@ -132,18 +143,18 @@ export default {
   padding-right: 15px;
   margin: 0px;
 }
-.cardContactTitle {
+.card-contact-title {
   padding-bottom: 33px;
 }
-.cardContactTitle h2 {
+.card-contact-title h2 {
   font-size: 18px;
 }
-.cardContactDescription p {
+.card-contact-description p {
   font-size: 16px;
   margin: 0px;
   line-height: 30px;
 }
-.cardContactInfo ul {
+.card-contact-info ul {
   display: flex;
   flex-direction: column;
   list-style: none;
@@ -151,28 +162,28 @@ export default {
   justify-content: center;
   padding-left: 0px;
 }
-.cardContactInfo ul li {
+.card-contact-info ul li {
   display: list-item;
   display: block;
   flex-direction: row;
   padding-top: 5px;
   padding-bottom: 5px;
 }
-.cardContactInfo ul li h3 {
+.card-contact-cnfo ul li h3 {
   margin-top: 8px;
   margin-left: 23px;
   margin-bottom: 30px;
 }
-.cardContactInfo ul li span {
+.card-contact-info ul li span {
   font-size: 20px;
 }
-.cardMenu {
+.card-menu {
   max-width: 58%;
   display: flex;
   width: 100%;
   justify-content: space-between;
 }
-.cardMenuContent {
+.card-menu-content {
   width: 100%;
   position: relative;
   display: flex;
@@ -222,7 +233,7 @@ export default {
 .menu ul li a:hover {
   color: var(--colorTheme);
 }
-.cardForm {
+.card-form {
   display: flex;
   max-width: 25%;
   flex-wrap: inherit;
@@ -230,37 +241,46 @@ export default {
   padding-left: 19px;
   padding-right: 15px;
 }
-.cardFormContent {
+.card-form-content {
   display: flex;
   flex-direction: column;
 }
-.cardFormContent h2 {
+.card-form-content h2 {
   font-family: var(--fontFamily);
   color: var(--fontColor);
   padding: 0px 0px 33px;
   margin: 0px;
 }
-.cardFormContent p {
+.card-form-content p {
   font-family: var(--fontFamily);
   color: var(--fontColor);
   margin-bottom: 24px;
   margin-top: 0px;
   line-height: 30px;
 }
-.cardFormContent h2 {
+.card-form-content h2 {
   font-size: 18px;
 }
-.cardFormContent form {
+.card-form-content form {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
 }
-.cardFormContent form label {
+.card-form-content form label {
   width: 60%;
   display: flex;
   flex-grow: 1;
 }
-.cardFormContent form label::before {
+.card-form-content form label span {
+    position: relative;
+    width:25px;
+    height: 25px;
+    top: 35%;
+    left: 30px;
+    transform: translateY(-30%);
+    left: 25px;
+}
+.card-form-content form label::before {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -268,7 +288,7 @@ export default {
   width: 16px;
   height: 16px;
 }
-.cardFormContent form label input {
+.card-form-content form label input {
   flex-grow: 1;
   height: 45px;
   width: 60%;
@@ -280,7 +300,7 @@ export default {
   border-bottom-left-radius: 5px;
   border-top-left-radius: 5px;
 }
-.cardFormContent form button {
+.card-form-content form button {
   width: 40%;
   height: 48px;
   padding: auto;
@@ -292,54 +312,54 @@ export default {
   background-color: var(--colorTheme);
   font-weight: 400;
 }
-.cardFormContent form button:hover {
+.card-form-content form button:hover {
   cursor: pointer;
 }
 @media screen and (max-width: 990px) {
-  .informationArea {
+  .information-area {
     padding: 0px;
   }
-  .informationContent {
+  .information-content {
     flex-wrap: wrap;
   }
-  .informationRow {
+  .information-row {
     flex-wrap: wrap;
   }
-  .cardForm {
+  .card-form {
     max-width: 41%;
     margin: 30px 0px 0px;
   }
-  .cardContact {
+  .card-contact {
     padding: 0px;
   }
 }
 @media screen and (max-width: 788px) {
-  .cardContact {
+  .card-contact {
     max-width: 100%;
   }
-  .cardMenu {
+  .card-menu {
     max-width: 100%;
     padding: 0px;
   }
-  .cardForm {
+  .card-form {
     max-width: 100%;
     width: 100%;
   }
-  .cardFormContent {
+  .card-form-content {
     width: 100%;
   }
-  .cardFormContent form label {
+  .card-form-content form label {
     width: 40%;
   }
-  .cardFormContent form label input {
+  .card-form-content form label input {
     width: 40%;
   }
-  .cardFormContent form button {
+  .card-form-content form button {
     width: 60%;
   }
 }
 @media screen and (max-width: 490px) {
-  .cardMenuContent {
+  .card-menu-content {
     flex-wrap: wrap;
   }
   .menu {
