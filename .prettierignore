@@ -1,6 +1,6 @@
 ###
 # Place your Prettier ignore content here
-
+  node_modules/
 ###
 # .gitignore content is duplicated here due to https://github.com/prettier/prettier/issues/8506
 
