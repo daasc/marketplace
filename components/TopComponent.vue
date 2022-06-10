@@ -10,7 +10,7 @@ export default {
   data() {
     return {
       scrollAnima: null,
-      upitem: null,
+      upItem: null,
       ItemVisible: null,
     }
   },
@@ -20,8 +20,8 @@ export default {
   },
   methods: {
     positionScroll() {
-      this.upitem = this.scrollAnima.getBoundingClientRect().top
-      this.ItemVisible = this.upitem < 0
+      this.upItem = this.scrollAnima.getBoundingClientRect().top
+      this.ItemVisible = this.upItem < 0
       if (this.ItemVisible) {
         this.scrollAnima.classList.add('show')
       } else {
