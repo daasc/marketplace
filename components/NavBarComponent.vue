@@ -87,7 +87,7 @@
                   <span class="price">
                     <bdi>
                       <span class="price-simbol">$</span>
-                      "0.00"
+                      0.00
                     </bdi>
                   </span>
                 </span>
@@ -105,6 +105,17 @@ export default {
 }
 </script>
 <style scoped>
+.price {
+  color: black;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1;
+  display: block;
+  font-family: 'Muli', sans-serif;
+}
+a {
+  text-decoration: none;
+}
 .car-content {
   display: flex;
   align-items: center;
@@ -113,7 +124,6 @@ export default {
 .car-text {
   margin-left: 12px;
   line-height: 1;
-  text-decoration: none;
 }
 
 .menu-go-back span {
@@ -130,6 +140,8 @@ bdi {
   margin-bottom: 7px;
   font-size: 11px;
   color: #777;
+  text-decoration: none;
+  font-family: 'Muli', sans-serif;
 }
 
 .img {
@@ -149,17 +161,15 @@ svg:not(:root) {
 .min-icon,
 svg {
   vertical-align: -0.125em;
-  width: 2em;
-  height: 2em;
+  width: 1.5em;
+  height: 1.5em;
   display: inline-block;
   fill: currentColor;
 }
 
 .container {
-  width: 100%;
   padding-left: 30px;
   padding-right: 30px;
-  margin: 0 auto;
 }
 
 .container-all {
@@ -194,9 +204,10 @@ svg {
 
 .car-icon {
   position: relative;
-  padding: 0 10px;
+  padding: 0 12px;
   display: block;
   line-height: 1;
+  color: black;
 }
 
 .min-icon span svg {
@@ -215,12 +226,14 @@ svg {
   text-align: center;
   background-color: orange;
   border-radius: 3px;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
   color: black;
-  padding: 5px 5px 3px;
+  padding: 4px 4px 4px;
   line-height: 1;
-  min-width: 18px;
+  font-family: 'Muli', sans-serif;
+  min-width: 10px;
+  cursor: pointer;
 }
 
 @media (max-width: 1199px) {
