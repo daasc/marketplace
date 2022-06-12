@@ -27,20 +27,15 @@
             </div>
             <nav class="menu-nav">
               <ul class="menu-ul">
-                <li class="menu-li">jrrjj</li>
-                <li class="menu-li">jdm</li>
-                <li class="menu-li">nfnfmn</li>
-                <li class="menu-li">mnnn</li>
-                <li class="menu-li">nffn</li>
-                <li class="menu-li">nffn</li>
-                <li class="menu-li">nffn</li>
-                <li class="menu-li">nffn</li>
-                <li class="menu-li">nffn</li>
-                <li class="menu-li">nffn</li>
-                <li class="menu-li">nffn</li>
-                <li class="menu-li">nffn</li>
-                <li class="menu-li">nffn</li>
-                <li class="menu-li">nffn</li>
+                <li class="menu-li">DEALS TODAY</li>
+                <li class="menu-li">SPECIAL PRICES</li>
+                <li class="menu-li">FRESH</li>
+                <li class="menu-li">FROZEN</li>
+                <li class="menu-li">DEMOS</li>
+                <li class="menu-li">SHOP</li>
+                <li class="menu-li">BLOG</li>
+                <li class="menu-li">PAGES</li>
+                <li class="menu-li">BRAND</li>
               </ul>
             </nav>
           </div>
@@ -245,6 +240,20 @@ svg {
   ul {
     list-style: none;
   }
+  span {
+    position: relative;
+  }
+  .container-all {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #eee;
+    padding: 20px 15px;
+    padding-right: 20px;
+    position: relative;
+    background-color: #fff;
+    width: 100%;
+    align-content: center;
+  }
 
   .container {
     display: flex;
@@ -254,11 +263,13 @@ svg {
     background-color: #fff;
     height: 82px;
     color: black;
+    padding: 0;
   }
 
   .container-left {
     display: flex;
     flex-direction: row;
+    align-content: center;
   }
 
   .container-right {
@@ -269,13 +280,17 @@ svg {
   }
 
   .img {
-    width: 150px;
-    height: 50px;
+    width: 155px;
+    display: inline-block;
+    vertical-align: middle;
+    height: auto;
+    max-width: 100%;
+    border-style: none;
+    border: 0;
   }
 
   .div-img {
-    margin-left: 149%;
-    margin-top: 17px;
+    margin-left: 43%;
   }
 
   .min-icon {
@@ -305,24 +320,37 @@ svg {
 
   .menu-mobile {
     height: 100%;
-    width: 25px;
+    width: 43.8px;
     display: flex;
     flex-direction: column;
-    justify-content: left;
-    margin-left: 19px;
+    align-items: center;
+  }
+  input:checked .layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.25);
+    display: block;
+    z-index: 999;
   }
 
   .menu-mobile label {
     position: relative;
     z-index: 1;
-    margin-top: 19px;
   }
-
+  .menu-mobile input {
+    width: 100%;
+    height: 100%;
+  }
   .menu-nav ul {
     position: absolute;
-    width: 100%;
+    width: 93%;
   }
-
+  .menu-nav {
+    width: 78%;
+  }
   .menu-go-back {
     vertical-align: -0.125em;
     width: 1.4em;
@@ -340,6 +368,8 @@ svg {
     position: absolute;
     color: black;
     background-color: white;
+    overflow-y: auto;
+    top: 0;
   }
 
   .menu-box nav {
@@ -350,7 +380,8 @@ svg {
   .menu-box li {
     border-bottom: 1px solid #eee;
     padding: 20px 0;
-    width: 97%;
+    width: 100%;
+    position: relative;
   }
 
   input:checked ~ .menu-box {
