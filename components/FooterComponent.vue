@@ -37,6 +37,7 @@ footer {
 footer ul {
   display: flex;
   list-style: none;
+  padding: 0;
 }
 
 footer ul li {
@@ -50,7 +51,9 @@ footer ul li a {
 
 footer p {
   color: #000;
-  font-size: 18px;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
 }
 
 footer .left {
