@@ -24,7 +24,7 @@ export default {
   name: 'FooterComponent',
 }
 </script>
-<style scope>
+<style lang="scss" scoped>
 footer {
   display: flex;
   flex-direction: column;

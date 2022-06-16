@@ -1,5 +1,7 @@
 <template>
   <div>
+    <nav-bar-component></nav-bar-component>
+
     <a name="scroll-top"></a>
     <!-- deve add um navbar aqui -->
     <banner-component></banner-component>
@@ -10,6 +12,7 @@
   </div>
 </template>
 <script>
+import NavBarComponent from '~/components/NavBarComponent.vue'
 import FooterComponent from '~/components/FooterComponent.vue'
 import InformationComponent from '~/components/InformationComponent.vue'
 import BannerComponent from '~/components/BannerComponent.vue'
@@ -22,6 +25,7 @@ export default {
     InformationComponent,
     BannerComponent,
     TopComponent,
+    'nav-bar-component': NavBarComponent,
   },
 }
 </script>
