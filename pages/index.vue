@@ -1,5 +1,6 @@
 <template>
   <div>
+    <banner-component></banner-component>
     <div class="category">
       <h2>Browse by Category</h2>
       <ButtonNextAndPrevByCategory></ButtonNextAndPrevByCategory>
@@ -26,12 +27,18 @@
   </div>
 </template>
 <script>
+import BannerComponent from '~/components/BannerComponent.vue'
 import ButtonNextAndPrevByCategory from '~/components/ButtonNextAndPrevByCategory.vue'
 import CardCategory from '~/components/CardCategory.vue'
 import CardProduct from '~/components/CardProduct.vue'
 export default {
   name: 'HomePage',
-  components: { ButtonNextAndPrevByCategory, CardCategory, CardProduct },
+  components: {
+    ButtonNextAndPrevByCategory,
+    CardCategory,
+    CardProduct,
+    BannerComponent,
+  },
   layout: 'default',
   data() {
     return {
