@@ -163,14 +163,20 @@ svg {
 }
 
 .container {
-  padding-left: 30px;
-  padding-right: 30px;
+  padding: 0px 30px;
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  margin-bottom: 101px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .container-all {
   display: flex;
   align-items: center;
-  padding: 38.5px 0;
 }
 
 .container-left {
