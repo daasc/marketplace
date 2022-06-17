@@ -126,9 +126,7 @@ export default {
     },
     addToWishList() {
       if (process.client) {
-        const wishlist = JSON.parse(localStorage.getItem('wish'))
-          ? JSON.parse(localStorage.getItem('wish'))
-          : []
+        const wishlist = JSON.parse(localStorage.getItem('wish')) || []
         wishlist.push({
           id: this.id,
           name: this.name,

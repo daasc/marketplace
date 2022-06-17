@@ -26,7 +26,10 @@
         <tr v-for="(item, index) in products" :key="index">
           <td>
             <div class="trash">
-              <i class="fa-solid fa-trash-can"></i>
+              <i
+                class="fa-solid fa-trash-can"
+                @click="removeToWishList(item.id)"
+              ></i>
             </div>
           </td>
           <td>
@@ -63,15 +66,26 @@ export default {
   name: 'WishList',
   layout: 'default',
   data() {
-    return {}
+    return {
+      products: [],
+    }
   },
-  computed: {
-    products() {
+  mounted() {
+    // eslint-disable-next-line nuxt/no-env-in-hooks
+    if (process.client) {
+      const wishlist = JSON.parse(localStorage.getItem('wish'))
+      this.products = wishlist || []
+    }
+  },
+
+  methods: {
+    removeToWishList(id) {
       if (process.client) {
         const wishlist = JSON.parse(localStorage.getItem('wish'))
-        return wishlist || []
+        const newWishlist = wishlist.filter((product) => product.id !== id)
+        localStorage.setItem('wish', JSON.stringify(newWishlist))
+        this.products = newWishlist
       }
-      return []
     },
   },
 }
