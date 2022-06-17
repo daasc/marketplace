@@ -4,7 +4,15 @@
       <img :src="urlImage" alt="" />
     </div>
     <div class="content-description">
-      <div>Format</div>
+      <div class="name-company">
+        <span>Format</span>
+        <i
+          v-if="isWish"
+          class="fa-solid fa-heart"
+          @click="removeToWishList()"
+        ></i>
+        <i v-else class="fa-regular fa-heart" @click="addToWishList()"></i>
+      </div>
       <div class="name-product">{{ name }}</div>
       <div class="star-product">
         <StarComponent
@@ -69,14 +77,34 @@ export default {
       type: Number,
       required: true,
     },
+    id: {
+      type: String,
+      required: true,
+    },
+    stock: {
+      type: Number,
+      required: true,
+    },
   },
   data() {
     return {
       star: [1, 1, 1, 1, 1],
       counter: 1,
       totalPrice: this.price,
+      isWish: false,
     }
   },
+  mounted() {
+    // eslint-disable-next-line nuxt/no-env-in-hooks
+    if (process.client) {
+      const wishlist = JSON.parse(localStorage.getItem('wish')) || []
+      const findProduct = wishlist.find((product) => product.id === this.id)
+      if (findProduct) {
+        this.isWish = true
+      }
+    }
+  },
+
   methods: {
     minusCounter() {
       if (this.counter > 1) {
@@ -87,6 +115,29 @@ export default {
     plusCounter() {
       this.counter++
       this.totalPrice = Number(this.price * this.counter).toFixed(2)
+    },
+    removeToWishList() {
+      if (process.client) {
+        const wishlist = JSON.parse(localStorage.getItem('wish'))
+        const newWishlist = wishlist.filter((product) => product.id !== this.id)
+        localStorage.setItem('wish', JSON.stringify(newWishlist))
+        this.isWish = false
+      }
+    },
+    addToWishList() {
+      if (process.client) {
+        const wishlist = JSON.parse(localStorage.getItem('wish')) || []
+        wishlist.push({
+          id: this.id,
+          name: this.name,
+          urlImage: this.urlImage,
+          weight: this.weight,
+          stock: this.stock,
+          price: this.price,
+        })
+        localStorage.setItem('wish', JSON.stringify(wishlist))
+        this.isWish = true
+      }
     },
   },
 }
@@ -109,50 +160,7 @@ export default {
   .content-add-product {
     transition: 0.5s ease-out;
     display: none;
-    .button-add-product {
-      align-items: center;
-      background-clip: padding-box;
-      background-color: #fab527;
-      border: 1px solid transparent;
-      border-radius: 0.25rem;
-      box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
-      box-sizing: border-box;
-      color: black;
-      cursor: pointer;
-      display: inline-flex;
-      font-family: system-ui, -apple-system, system-ui, 'Helvetica Neue',
-        Helvetica, Arial, sans-serif;
-      font-size: 16px;
-      font-weight: 600;
-      justify-content: center;
-      line-height: 1.25;
-      margin: 10px 0px;
-      min-height: 3rem;
-      padding: calc(0.875rem - 1px) calc(1.5rem - 1px);
-      position: relative;
-      text-decoration: none;
-      transition: all 250ms;
-      user-select: none;
-      -webkit-user-select: none;
-      touch-action: manipulation;
-      vertical-align: baseline;
-      width: 100%;
-      &:hover,
-      &:focus {
-        background-color: #fab527;
-        box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-      }
 
-      &:hover {
-        transform: translateY(-1px);
-      }
-
-      &:active {
-        background-color: #fab527;
-        box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
-        transform: translateY(0);
-      }
-    }
     .add-product {
       display: flex;
       justify-content: space-between;
@@ -245,6 +253,16 @@ export default {
       white-space: nowrap;
       overflow: hidden;
       width: 100%;
+    }
+    .name-company {
+      display: flex;
+      justify-content: space-between;
+
+      .fa-solid,
+      .fa-regular {
+        color: red;
+        cursor: pointer;
+      }
     }
     .star-product {
       display: flex;
