@@ -4,7 +4,15 @@
       <img :src="urlImage" alt="" />
     </div>
     <div class="content-description">
-      <div>Format</div>
+      <div class="name-company">
+        <span>Format</span>
+        <i
+          v-if="isWish"
+          class="fa-solid fa-heart"
+          @click="removeToWishList()"
+        ></i>
+        <i v-else class="fa-regular fa-heart" @click="addToWishList()"></i>
+      </div>
       <div class="name-product">{{ name }}</div>
       <div class="star-product">
         <StarComponent
@@ -69,14 +77,34 @@ export default {
       type: Number,
       required: true,
     },
+    id: {
+      type: String,
+      required: true,
+    },
+    stock: {
+      type: Number,
+      required: true,
+    },
   },
   data() {
     return {
       star: [1, 1, 1, 1, 1],
       counter: 1,
       totalPrice: this.price,
+      isWish: false,
     }
   },
+  mounted() {
+    // eslint-disable-next-line nuxt/no-env-in-hooks
+    if (process.client) {
+      const wishlist = JSON.parse(localStorage.getItem('wish')) || []
+      const findProduct = wishlist.find((product) => product.id === this.id)
+      if (findProduct) {
+        this.isWish = true
+      }
+    }
+  },
+
   methods: {
     minusCounter() {
       if (this.counter > 1) {
@@ -87,6 +115,31 @@ export default {
     plusCounter() {
       this.counter++
       this.totalPrice = Number(this.price * this.counter).toFixed(2)
+    },
+    removeToWishList() {
+      if (process.client) {
+        const wishlist = JSON.parse(localStorage.getItem('wish'))
+        const newWishlist = wishlist.filter((product) => product.id !== this.id)
+        localStorage.setItem('wish', JSON.stringify(newWishlist))
+        this.isWish = false
+      }
+    },
+    addToWishList() {
+      if (process.client) {
+        const wishlist = JSON.parse(localStorage.getItem('wish'))
+          ? JSON.parse(localStorage.getItem('wish'))
+          : []
+        wishlist.push({
+          id: this.id,
+          name: this.name,
+          urlImage: this.urlImage,
+          weight: this.weight,
+          stock: this.stock,
+          price: this.price,
+        })
+        localStorage.setItem('wish', JSON.stringify(wishlist))
+        this.isWish = true
+      }
     },
   },
 }
@@ -202,6 +255,16 @@ export default {
       white-space: nowrap;
       overflow: hidden;
       width: 100%;
+    }
+    .name-company {
+      display: flex;
+      justify-content: space-between;
+
+      .fa-solid,
+      .fa-regular {
+        color: red;
+        cursor: pointer;
+      }
     }
     .star-product {
       display: flex;

@@ -17,11 +17,13 @@
     <section>
       <CardProduct
         v-for="(item, index) in products"
+        :id="item.id"
         :key="index"
         :name="item.name"
         :url-image="item.urlImage"
         :price="item.price"
         :weight="item.weight"
+        :stock="item.stock"
       ></CardProduct>
     </section>
   </div>
@@ -56,6 +58,8 @@ export default {
             'https://i0.wp.com/demo4.drfuri.com/farmart2/wp-content/uploads/sites/11/2020/02/08_3a.jpg?resize=600%2C600&ssl=1',
           weight: 456,
           price: 6.9,
+          id: 'qfafasdfasd',
+          stock: 10,
         },
       ],
     }

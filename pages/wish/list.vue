@@ -49,6 +49,11 @@
             </button>
           </td>
         </tr>
+        <tr v-if="!products.length">
+          <td class="no-product">
+            <span>No products added to the wishlist</span>
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>
@@ -58,31 +63,16 @@ export default {
   name: 'WishList',
   layout: 'default',
   data() {
-    return {
-      products: [
-        {
-          urlImage:
-            'https://i0.wp.com/demo4.drfuri.com/farmart2/wp-content/uploads/sites/11/2020/02/04_4a.jpg?resize=300%2C300&amp;ssl=1',
-          name: 'Soft Mochi Galeto Ice Cream',
-          price: 200,
-          stock: 10,
-        },
-        {
-          urlImage:
-            'https://i0.wp.com/demo4.drfuri.com/farmart2/wp-content/uploads/sites/11/2020/02/04_4a.jpg?resize=300%2C300&amp;ssl=1',
-          name: 'Soft Mochi Galeto Ice Cream',
-          price: 200,
-          stock: 10,
-        },
-        {
-          urlImage:
-            'https://i0.wp.com/demo4.drfuri.com/farmart2/wp-content/uploads/sites/11/2020/02/04_4a.jpg?resize=300%2C300&amp;ssl=1',
-          name: 'Soft Mochi Galeto Ice Cream',
-          price: 200,
-          stock: 0,
-        },
-      ],
-    }
+    return {}
+  },
+  computed: {
+    products() {
+      if (process.client) {
+        const wishlist = JSON.parse(localStorage.getItem('wish'))
+        return wishlist || []
+      }
+      return []
+    },
   },
 }
 </script>
@@ -109,6 +99,9 @@ export default {
       }
       tbody {
         tr {
+          .no-product {
+            padding: 20px;
+          }
           td {
             border-bottom: 1px solid #eee;
             text-align: center;
