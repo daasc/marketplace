@@ -177,6 +177,7 @@ svg {
 .container-all {
   display: flex;
   align-items: center;
+  padding-right: 30px;
 }
 
 .container-left {
