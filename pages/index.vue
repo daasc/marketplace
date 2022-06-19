@@ -51,18 +51,15 @@ export default {
           description: 'description',
         },
       ],
-      products: [
-        {
-          name: 'Vimto Squash Remix Apple 1.5',
-          urlImage:
-            'https://i0.wp.com/demo4.drfuri.com/farmart2/wp-content/uploads/sites/11/2020/02/08_3a.jpg?resize=600%2C600&ssl=1',
-          weight: 456,
-          price: 6.9,
-          id: 'qfafasdfasd',
-          stock: 10,
-        },
-      ],
     }
+  },
+  computed: {
+    products() {
+      return this.$store.state.product.products
+    },
+  },
+  async created() {
+    await this.$store.dispatch('product/getProducts')
   },
 }
 </script>
