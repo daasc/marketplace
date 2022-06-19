@@ -374,6 +374,7 @@ svg {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: absolute;
   }
 
   input:checked .layer {
