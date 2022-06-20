@@ -1,6 +1,12 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   target: 'static',
+  loading: '@/components/loadingComponent.vue',
+  loadingIndicator: {
+    name: 'circle',
+    color: '#3B8070',
+    background: 'white',
+  },
   head: {
     title: 'marketplace',
     htmlAttrs: {
