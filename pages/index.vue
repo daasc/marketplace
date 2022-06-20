@@ -58,8 +58,14 @@ export default {
       return this.$store.state.product.products
     },
   },
+  mounted() {
+    this.$nextTick(() => {
+      this.$nuxt.$loading.start()
+    })
+  },
   async created() {
     await this.$store.dispatch('product/getProducts')
+    this.$nuxt.$loading.finish()
   },
 }
 </script>
