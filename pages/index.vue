@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <main class="main">
     <banner-component></banner-component>
     <div class="category">
       <h2>Browse by Category</h2>
@@ -26,7 +26,7 @@
         :stock="item.stock"
       ></CardProduct>
     </section>
-  </div>
+  </main>
 </template>
 <script>
 import BannerComponent from '~/components/BannerComponent.vue'

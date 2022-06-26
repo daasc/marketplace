@@ -1,20 +1,23 @@
 <template>
-  <div class="nav-bar">
+  <nav class="nav-bar">
     <div class="container-left">
       <div class="div-img">
-        <a href="" class="logo">
+        <router-link to="/" class="logo">
           <img
             src="https://demo4.drfuri.com/farmart2/wp-content/themes/farmart/images/logo.svg"
             class="img"
             alt=""
           />
-        </a>
+        </router-link>
       </div>
     </div>
-    <div class="container-center"></div>
     <div class="container-right">
       <div class="login">
-        <a id="fm-login" href="https://demo4.drfuri.com/farmart2/my-account/">
+        <router-link
+          id="fm-login"
+          to=""
+          href="https://demo4.drfuri.com/farmart2/my-account/"
+        >
           <span class="login-icon"
             ><svg
               aria-hidden="true"
@@ -29,9 +32,9 @@
                 d="M896 1024h-819.2c-42.347 0-76.8-34.451-76.8-76.8 0-3.485 0.712-86.285 62.72-168.96 36.094-48.126 85.514-86.36 146.883-113.634 74.957-33.314 168.085-50.206 276.797-50.206 108.71 0 201.838 16.893 276.797 50.206 61.37 27.275 110.789 65.507 146.883 113.634 62.008 82.675 62.72 165.475 62.72 168.96 0 42.349-34.451 76.8-76.8 76.8zM486.4 665.6c-178.52 0-310.267 48.789-381 141.093-53.011 69.174-54.195 139.904-54.2 140.61 0 14.013 11.485 25.498 25.6 25.498h819.2c14.115 0 25.6-11.485 25.6-25.6-0.006-0.603-1.189-71.333-54.198-140.507-70.734-92.304-202.483-141.093-381.002-141.093z"
               ></path></svg
           ></span>
-        </a>
+        </router-link>
       </div>
-      <div class="wishlist">
+      <router-link to="/wish/list" class="wishlist">
         <span
           class="wishlist-icon"
           href="https://demo4.drfuri.com/farmart2/wishlist/"
@@ -49,7 +52,7 @@
               ></path></svg
           ></span>
         </span>
-      </div>
+      </router-link>
       <div class="cart">
         <a href="">
           <span class="car-content">
@@ -89,7 +92,7 @@
         </a>
       </div>
     </div>
-  </div>
+  </nav>
 </template>
 <script>
 export default {
@@ -255,7 +258,7 @@ svg {
     display: flex;
     flex-direction: row;
     border-bottom: 1px solid #eee;
-    position: relative;
+    position: fixed;
     background-color: #fff;
     height: 82px;
     color: black;
