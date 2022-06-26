@@ -96,7 +96,7 @@ export default {
   name: 'NavBarComponent',
 }
 </script>
-<style scoped>
+<style lang="css" scoped>
 .price {
   color: black;
   font-weight: 700;
@@ -233,11 +233,6 @@ svg {
 }
 
 @media (max-width: 1199px) {
-  * {
-    padding: 0px;
-    margin: 0px;
-  }
-
   ul {
     list-style: none;
   }
@@ -283,7 +278,6 @@ svg {
   .container-right {
     text-align: center;
     justify-content: flex-end;
-    flex: inherit;
     padding-left: 30px;
   }
 

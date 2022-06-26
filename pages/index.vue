@@ -1,5 +1,6 @@
 <template>
   <div>
+    <banner-component></banner-component>
     <div class="category">
       <h2>Browse by Category</h2>
       <ButtonNextAndPrevByCategory></ButtonNextAndPrevByCategory>
@@ -16,22 +17,30 @@
     <section>
       <CardProduct
         v-for="(item, index) in products"
+        :id="item.id"
         :key="index"
         :name="item.name"
         :url-image="item.urlImage"
         :price="item.price"
         :weight="item.weight"
+        :stock="item.stock"
       ></CardProduct>
     </section>
   </div>
 </template>
 <script>
+import BannerComponent from '~/components/BannerComponent.vue'
 import ButtonNextAndPrevByCategory from '~/components/ButtonNextAndPrevByCategory.vue'
 import CardCategory from '~/components/CardCategory.vue'
 import CardProduct from '~/components/CardProduct.vue'
 export default {
   name: 'HomePage',
-  components: { ButtonNextAndPrevByCategory, CardCategory, CardProduct },
+  components: {
+    ButtonNextAndPrevByCategory,
+    CardCategory,
+    CardProduct,
+    BannerComponent,
+  },
   layout: 'default',
   data() {
     return {
@@ -49,6 +58,8 @@ export default {
             'https://i0.wp.com/demo4.drfuri.com/farmart2/wp-content/uploads/sites/11/2020/02/08_3a.jpg?resize=600%2C600&ssl=1',
           weight: 456,
           price: 6.9,
+          id: 'qfafasdfasd',
+          stock: 10,
         },
       ],
     }
