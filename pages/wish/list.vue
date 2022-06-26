@@ -1,5 +1,5 @@
 <template>
-  <div class="wish-list">
+  <main class="wish-list main">
     <h2>Wishlist</h2>
     <table class="whish-list-table">
       <thead>
@@ -59,7 +59,7 @@
         </tr>
       </tbody>
     </table>
-  </div>
+  </main>
 </template>
 <script>
 export default {
