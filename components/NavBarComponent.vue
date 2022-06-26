@@ -1,132 +1,92 @@
 <template>
-  <div class="container">
-    <div class="container-all">
-      <div class="container-left">
-        <div class="menu-mobile">
-          <input id="checkbox-menu" type="checkbox" />
-          <label class="label-menu" for="checkbox-menu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </label>
-          <div class="menu-box">
-            <div class="menu-top">
-              <input id="checkbox-menu" type="checkbox" />
-              <span class="menu-go-back">
+  <div class="nav-bar">
+    <div class="container-left">
+      <div class="div-img">
+        <a href="" class="logo">
+          <img
+            src="https://demo4.drfuri.com/farmart2/wp-content/themes/farmart/images/logo.svg"
+            class="img"
+            alt=""
+          />
+        </a>
+      </div>
+    </div>
+    <div class="container-center"></div>
+    <div class="container-right">
+      <div class="login">
+        <a id="fm-login" href="https://demo4.drfuri.com/farmart2/my-account/">
+          <span class="login-icon"
+            ><svg
+              aria-hidden="true"
+              role="img"
+              focusable="false"
+              viewBox="0 0 1024 1024"
+            >
+              <path
+                d="M486.4 563.2c-155.275 0-281.6-126.325-281.6-281.6s126.325-281.6 281.6-281.6 281.6 126.325 281.6 281.6-126.325 281.6-281.6 281.6zM486.4 51.2c-127.043 0-230.4 103.357-230.4 230.4s103.357 230.4 230.4 230.4c127.042 0 230.4-103.357 230.4-230.4s-103.358-230.4-230.4-230.4z"
+              ></path>
+              <path
+                d="M896 1024h-819.2c-42.347 0-76.8-34.451-76.8-76.8 0-3.485 0.712-86.285 62.72-168.96 36.094-48.126 85.514-86.36 146.883-113.634 74.957-33.314 168.085-50.206 276.797-50.206 108.71 0 201.838 16.893 276.797 50.206 61.37 27.275 110.789 65.507 146.883 113.634 62.008 82.675 62.72 165.475 62.72 168.96 0 42.349-34.451 76.8-76.8 76.8zM486.4 665.6c-178.52 0-310.267 48.789-381 141.093-53.011 69.174-54.195 139.904-54.2 140.61 0 14.013 11.485 25.498 25.6 25.498h819.2c14.115 0 25.6-11.485 25.6-25.6-0.006-0.603-1.189-71.333-54.198-140.507-70.734-92.304-202.483-141.093-381.002-141.093z"
+              ></path></svg
+          ></span>
+        </a>
+      </div>
+      <div class="wishlist">
+        <span
+          class="wishlist-icon"
+          href="https://demo4.drfuri.com/farmart2/wishlist/"
+        >
+          <span class="min-intem">0</span>
+          <span class="wishlist-min-icon"
+            ><svg
+              aria-hidden="true"
+              role="img"
+              focusable="false"
+              viewBox="0 0 1024 1024"
+            >
+              <path
+                d="M486.4 972.8c-4.283 0-8.566-1.074-12.434-3.222-4.808-2.67-119.088-66.624-235.122-171.376-68.643-61.97-123.467-125.363-162.944-188.418-50.365-80.443-75.901-160.715-75.901-238.584 0-148.218 120.582-268.8 268.8-268.8 50.173 0 103.462 18.805 150.051 52.952 27.251 19.973 50.442 44.043 67.549 69.606 17.107-25.565 40.299-49.634 67.55-69.606 46.589-34.147 99.878-52.952 150.050-52.952 148.218 0 268.8 120.582 268.8 268.8 0 77.869-25.538 158.141-75.901 238.584-39.478 63.054-94.301 126.446-162.944 188.418-116.034 104.754-230.314 168.706-235.122 171.376-3.867 2.149-8.15 3.222-12.434 3.222zM268.8 153.6c-119.986 0-217.6 97.614-217.6 217.6 0 155.624 120.302 297.077 221.224 388.338 90.131 81.504 181.44 138.658 213.976 158.042 32.536-19.384 123.845-76.538 213.976-158.042 100.922-91.261 221.224-232.714 221.224-388.338 0-119.986-97.616-217.6-217.6-217.6-87.187 0-171.856 71.725-193.314 136.096-3.485 10.453-13.267 17.504-24.286 17.504s-20.802-7.051-24.286-17.504c-21.456-64.371-106.125-136.096-193.314-136.096z"
+              ></path></svg
+          ></span>
+        </span>
+      </div>
+      <div class="cart">
+        <a href="">
+          <span class="car-content">
+            <span class="car-icon">
+              <span class="min-intem">0</span>
+              <span class="min-icon">
                 <svg
                   aria-hidden="true"
                   role="img"
                   focusable="false"
-                  viewBox="0 0 32 32"
+                  viewBox="0 0 1024 1024"
                 >
                   <path
-                    d="M1.034 16.234l9.6-9.6c0.312-0.312 0.819-0.312 1.131 0s0.312 0.819 0 1.131l-8.234 8.234h26.069c0.442 0 0.8 0.358 0.8 0.8s-0.358 0.8-0.8 0.8h-26.069l8.234 8.234c0.312 0.312 0.312 0.819 0 1.131-0.156 0.156-0.361 0.234-0.566 0.234s-0.409-0.078-0.566-0.234l-9.6-9.6c-0.312-0.312-0.312-0.819 0-1.131z"
+                    d="M409.6 1024c-56.464 0-102.4-45.936-102.4-102.4s45.936-102.4 102.4-102.4 102.4 45.936 102.4 102.4-45.936 102.4-102.4 102.4zM409.6 870.4c-28.232 0-51.2 22.968-51.2 51.2s22.968 51.2 51.2 51.2 51.2-22.968 51.2-51.2-22.968-51.2-51.2-51.2z"
+                  ></path>
+                  <path
+                    d="M768 1024c-56.464 0-102.4-45.936-102.4-102.4s45.936-102.4 102.4-102.4 102.4 45.936 102.4 102.4-45.936 102.4-102.4 102.4zM768 870.4c-28.232 0-51.2 22.968-51.2 51.2s22.968 51.2 51.2 51.2 51.2-22.968 51.2-51.2-22.968-51.2-51.2-51.2z"
+                  ></path>
+                  <path
+                    d="M898.021 228.688c-12.859-15.181-32.258-23.888-53.221-23.888h-626.846l-5.085-30.506c-6.72-40.315-43.998-71.894-84.869-71.894h-51.2c-14.138 0-25.6 11.462-25.6 25.6s11.462 25.6 25.6 25.6h51.2c15.722 0 31.781 13.603 34.366 29.112l85.566 513.395c6.718 40.314 43.997 71.893 84.867 71.893h512c14.139 0 25.6-11.461 25.6-25.6s-11.461-25.6-25.6-25.6h-512c-15.722 0-31.781-13.603-34.366-29.11l-12.63-75.784 510.206-44.366c39.69-3.451 75.907-36.938 82.458-76.234l34.366-206.194c3.448-20.677-1.952-41.243-14.813-56.424zM862.331 276.694l-34.366 206.194c-2.699 16.186-20.043 32.221-36.39 33.645l-514.214 44.714-50.874-305.246h618.314c5.968 0 10.995 2.054 14.155 5.782 3.157 3.73 4.357 9.024 3.376 14.912z"
                   ></path>
                 </svg>
               </span>
-            </div>
-            <nav class="menu-nav">
-              <ul class="menu-ul">
-                <li class="menu-li">DEALS TODAY</li>
-                <li class="menu-li">SPECIAL PRICES</li>
-                <li class="menu-li">FRESH</li>
-                <li class="menu-li">FROZEN</li>
-                <li class="menu-li">DEMOS</li>
-                <li class="menu-li">SHOP</li>
-                <li class="menu-li">BLOG</li>
-                <li class="menu-li">PAGES</li>
-                <li class="menu-li">BRAND</li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-        <div class="div-img">
-          <a href="" class="logo">
-            <img
-              src="https://demo4.drfuri.com/farmart2/wp-content/themes/farmart/images/logo.svg"
-              class="img"
-              alt=""
-            />
-          </a>
-        </div>
-      </div>
-      <div class="container-center"></div>
-      <div class="container-right">
-        <div class="login">
-          <a id="fm-login" href="https://demo4.drfuri.com/farmart2/my-account/">
-            <span class="login-icon"
-              ><svg
-                aria-hidden="true"
-                role="img"
-                focusable="false"
-                viewBox="0 0 1024 1024"
-              >
-                <path
-                  d="M486.4 563.2c-155.275 0-281.6-126.325-281.6-281.6s126.325-281.6 281.6-281.6 281.6 126.325 281.6 281.6-126.325 281.6-281.6 281.6zM486.4 51.2c-127.043 0-230.4 103.357-230.4 230.4s103.357 230.4 230.4 230.4c127.042 0 230.4-103.357 230.4-230.4s-103.358-230.4-230.4-230.4z"
-                ></path>
-                <path
-                  d="M896 1024h-819.2c-42.347 0-76.8-34.451-76.8-76.8 0-3.485 0.712-86.285 62.72-168.96 36.094-48.126 85.514-86.36 146.883-113.634 74.957-33.314 168.085-50.206 276.797-50.206 108.71 0 201.838 16.893 276.797 50.206 61.37 27.275 110.789 65.507 146.883 113.634 62.008 82.675 62.72 165.475 62.72 168.96 0 42.349-34.451 76.8-76.8 76.8zM486.4 665.6c-178.52 0-310.267 48.789-381 141.093-53.011 69.174-54.195 139.904-54.2 140.61 0 14.013 11.485 25.498 25.6 25.498h819.2c14.115 0 25.6-11.485 25.6-25.6-0.006-0.603-1.189-71.333-54.198-140.507-70.734-92.304-202.483-141.093-381.002-141.093z"
-                ></path></svg
-            ></span>
-          </a>
-        </div>
-        <div class="wishlist">
-          <span
-            class="wishlist-icon"
-            href="https://demo4.drfuri.com/farmart2/wishlist/"
-          >
-            <span class="min-intem">0</span>
-            <span class="wishlist-min-icon"
-              ><svg
-                aria-hidden="true"
-                role="img"
-                focusable="false"
-                viewBox="0 0 1024 1024"
-              >
-                <path
-                  d="M486.4 972.8c-4.283 0-8.566-1.074-12.434-3.222-4.808-2.67-119.088-66.624-235.122-171.376-68.643-61.97-123.467-125.363-162.944-188.418-50.365-80.443-75.901-160.715-75.901-238.584 0-148.218 120.582-268.8 268.8-268.8 50.173 0 103.462 18.805 150.051 52.952 27.251 19.973 50.442 44.043 67.549 69.606 17.107-25.565 40.299-49.634 67.55-69.606 46.589-34.147 99.878-52.952 150.050-52.952 148.218 0 268.8 120.582 268.8 268.8 0 77.869-25.538 158.141-75.901 238.584-39.478 63.054-94.301 126.446-162.944 188.418-116.034 104.754-230.314 168.706-235.122 171.376-3.867 2.149-8.15 3.222-12.434 3.222zM268.8 153.6c-119.986 0-217.6 97.614-217.6 217.6 0 155.624 120.302 297.077 221.224 388.338 90.131 81.504 181.44 138.658 213.976 158.042 32.536-19.384 123.845-76.538 213.976-158.042 100.922-91.261 221.224-232.714 221.224-388.338 0-119.986-97.616-217.6-217.6-217.6-87.187 0-171.856 71.725-193.314 136.096-3.485 10.453-13.267 17.504-24.286 17.504s-20.802-7.051-24.286-17.504c-21.456-64.371-106.125-136.096-193.314-136.096z"
-                ></path></svg
-            ></span>
-          </span>
-        </div>
-        <div class="cart">
-          <a href="">
-            <span class="car-content">
-              <span class="car-icon">
-                <span class="min-intem">0</span>
-                <span class="min-icon">
-                  <svg
-                    aria-hidden="true"
-                    role="img"
-                    focusable="false"
-                    viewBox="0 0 1024 1024"
-                  >
-                    <path
-                      d="M409.6 1024c-56.464 0-102.4-45.936-102.4-102.4s45.936-102.4 102.4-102.4 102.4 45.936 102.4 102.4-45.936 102.4-102.4 102.4zM409.6 870.4c-28.232 0-51.2 22.968-51.2 51.2s22.968 51.2 51.2 51.2 51.2-22.968 51.2-51.2-22.968-51.2-51.2-51.2z"
-                    ></path>
-                    <path
-                      d="M768 1024c-56.464 0-102.4-45.936-102.4-102.4s45.936-102.4 102.4-102.4 102.4 45.936 102.4 102.4-45.936 102.4-102.4 102.4zM768 870.4c-28.232 0-51.2 22.968-51.2 51.2s22.968 51.2 51.2 51.2 51.2-22.968 51.2-51.2-22.968-51.2-51.2-51.2z"
-                    ></path>
-                    <path
-                      d="M898.021 228.688c-12.859-15.181-32.258-23.888-53.221-23.888h-626.846l-5.085-30.506c-6.72-40.315-43.998-71.894-84.869-71.894h-51.2c-14.138 0-25.6 11.462-25.6 25.6s11.462 25.6 25.6 25.6h51.2c15.722 0 31.781 13.603 34.366 29.112l85.566 513.395c6.718 40.314 43.997 71.893 84.867 71.893h512c14.139 0 25.6-11.461 25.6-25.6s-11.461-25.6-25.6-25.6h-512c-15.722 0-31.781-13.603-34.366-29.11l-12.63-75.784 510.206-44.366c39.69-3.451 75.907-36.938 82.458-76.234l34.366-206.194c3.448-20.677-1.952-41.243-14.813-56.424zM862.331 276.694l-34.366 206.194c-2.699 16.186-20.043 32.221-36.39 33.645l-514.214 44.714-50.874-305.246h618.314c5.968 0 10.995 2.054 14.155 5.782 3.157 3.73 4.357 9.024 3.376 14.912z"
-                    ></path>
-                  </svg>
-                </span>
-              </span>
-              <span class="car-text">
-                <span class="title">Your Cart</span>
-                <span class="car-total">
-                  <span class="price">
-                    <bdi>
-                      <span class="price-simbol">$</span>
-                      0.00
-                    </bdi>
-                  </span>
+            </span>
+            <span class="car-text">
+              <span class="title">Your Cart</span>
+              <span class="car-total">
+                <span class="price">
+                  <bdi>
+                    <span class="price-simbol">$</span>
+                    0.00
+                  </bdi>
                 </span>
               </span>
             </span>
-          </a>
-        </div>
+          </span>
+        </a>
       </div>
     </div>
   </div>
@@ -160,10 +120,6 @@ a {
   line-height: 1;
 }
 
-.menu-go-back span {
-  display: none;
-}
-
 bdi {
   unicode-bidi: isolate;
 }
@@ -179,7 +135,7 @@ bdi {
 }
 
 .img {
-  width: 155px;
+  width: 150px;
   display: inline-block;
   vertical-align: middle;
   height: auto;
@@ -201,42 +157,38 @@ svg {
   fill: currentColor;
 }
 
-.container {
-  padding: 0px 30px;
+.nav-bar {
+  padding: 0px 0px;
   position: fixed;
   width: 100%;
+  top: 0;
   background-color: white;
   margin-bottom: 101px;
   height: 80px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
-}
-
-.container-all {
-  display: flex;
+  z-index: 100;
   align-items: center;
-  padding-right: 30px;
 }
 
 .container-left {
+  padding-left: 30px;
   padding-right: 30px;
   outline: none;
   display: flex;
   justify-items: left;
   flex: auto;
-  width: 20%;
-}
-
-.menu-mobile {
-  display: none;
+  height: 34px;
+  align-items: center;
 }
 
 .container-right {
   text-align: right;
-  justify-content: flex-end;
+  justify-content: end;
   flex: inherit;
   padding-left: 30px;
+  padding-right: 30px;
   outline: none;
   display: flex;
   align-items: center;
@@ -264,7 +216,7 @@ svg {
 .min-intem {
   position: absolute;
   right: 0;
-  top: -10px;
+  top: -11px;
   display: block;
   text-align: center;
   background-color: orange;
@@ -277,6 +229,7 @@ svg {
   font-family: 'Muli', sans-serif;
   min-width: 10px;
   cursor: pointer;
+  z-index: 10;
 }
 
 @media (max-width: 1199px) {
@@ -293,19 +246,17 @@ svg {
     position: relative;
   }
 
-  .container-all {
-    display: flex;
-    flex-wrap: wrap;
-    border-bottom: 1px solid #eee;
-    padding: 20px 15px;
-    padding-right: 20px;
+  .car-icon,
+  .wishlist-icon,
+  .login-icon {
     position: relative;
-    background-color: #fff;
-    width: 100%;
-    align-content: center;
+    padding: 0 5px;
+    display: block;
+    line-height: 1;
+    color: black;
   }
 
-  .container {
+  .nav-bar {
     display: flex;
     flex-direction: row;
     border-bottom: 1px solid #eee;
@@ -314,33 +265,30 @@ svg {
     height: 82px;
     color: black;
     padding: 0;
+    z-index: 100;
+    align-items: center;
   }
 
   .container-left {
+    padding-left: 30px;
+    padding-right: 30px;
+    outline: none;
     display: flex;
-    flex-direction: row;
-    align-content: center;
+    justify-items: left;
+    flex: auto;
+    height: 34px;
+    align-items: center;
   }
 
   .container-right {
-    text-align: right;
+    text-align: center;
     justify-content: flex-end;
     flex: inherit;
     padding-left: 30px;
   }
 
   .img {
-    width: 155px;
-    display: inline-block;
-    vertical-align: middle;
-    height: auto;
-    max-width: 100%;
-    border-style: none;
-    border: 0;
-  }
-
-  .div-img {
-    margin-left: 43%;
+    width: 150px;
   }
 
   .min-icon {
@@ -368,147 +316,13 @@ svg {
     flex-direction: column;
   }
 
-  .menu-mobile {
-    height: 100%;
-    width: 43.8px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-  }
-
-  input:checked .layer {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.25);
-    display: block;
-    z-index: 999;
-  }
-
-  .menu-mobile label {
-    position: relative;
-    z-index: 1;
-  }
-
-  .menu-mobile input {
-    width: 100%;
-    height: 100%;
-  }
-
-  .menu-nav ul {
-    position: absolute;
-    width: 93%;
-  }
-
-  .menu-nav {
-    width: 78%;
-  }
-
-  .menu-go-back {
+  .min-icon,
+  svg {
     vertical-align: -0.125em;
-    width: 1.4em;
-    height: 1em;
+    width: 1.5em;
+    height: 1.5em;
     display: inline-block;
     fill: currentColor;
-    margin-left: 19px;
-    margin-top: 19px;
-  }
-
-  .menu-box {
-    width: 78%;
-    height: 100%;
-    left: -78%;
-    position: absolute;
-    color: black;
-    background-color: white;
-    overflow-y: auto;
-    top: 0;
-  }
-
-  .menu-box nav {
-    padding: 25px 20px 28px;
-    width: 78%;
-  }
-
-  .menu-box li {
-    border-bottom: 1px solid #eee;
-    padding: 20px 0;
-    width: 100%;
-    position: relative;
-  }
-
-  input:checked ~ .menu-box {
-    left: 0;
-    margin-top: 0;
-    position: fixed;
-  }
-
-  input:checked ~ .menu-box div {
-    background-color: #fab528;
-    width: 100%;
-    height: 65px;
-  }
-
-  .menu-mobile input {
-    display: none;
-  }
-
-  .checkbox-menu {
-    opacity: 0;
-  }
-
-  .min-icon svg {
-    color: black;
-  }
-
-  .label-menu {
-    position: absolute;
-    cursor: pointer;
-    position: relative;
-    display: block;
-    height: 22px;
-    width: 30px;
-  }
-
-  .label-menu span {
-    position: absolute;
-    display: block;
-    height: 0.5px;
-    width: 100%;
-    margin-top: 17px;
-    border-radius: 30px;
-    background: #000000;
-    transition: 0.25s ease-in-out;
-  }
-
-  .label-menu span:nth-child(1) {
-    top: 0;
-    width: 19px;
-  }
-
-  .label-menu span:nth-child(2) {
-    top: 6px;
-    width: 19px;
-  }
-
-  .label-menu span:nth-child(3) {
-    top: 12px;
-    width: 19px;
-  }
-
-  #checkbox-menu:checked + label span:nth-child(1) {
-    display: none;
-  }
-
-  #checkbox-menu:checked + label span:nth-child(2) {
-    display: none;
-  }
-
-  #checkbox-menu:checked + label span:nth-child(3) {
-    display: none;
   }
 }
 </style>
