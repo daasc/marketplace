@@ -13,8 +13,18 @@
         :description="item.description"
       ></CardCategory>
     </section>
-
-    <section>
+    <section id="list_promotion" class="list-promotion">
+      <div class="category">
+        <h2>Featured Brands</h2>
+        <ButtonNextAndPrevByCategory></ButtonNextAndPrevByCategory>
+      </div>
+      <CardPromotion></CardPromotion>
+    </section>
+    <section id="list_product" class="list-product">
+      <div class="category">
+        <h2>Top Saver Today</h2>
+        <ButtonNextAndPrevByCategory></ButtonNextAndPrevByCategory>
+      </div>
       <CardProduct
         v-for="(item, index) in products"
         :id="item.id"
@@ -90,6 +100,36 @@ export default {
     margin: 15px 0px;
   }
 
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.list-promotion {
+  display: flex;
+  flex-direction: column;
+  width: 98%;
+  gap: 20px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  padding-top: 4px;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.list-product {
+  margin: 70px 0 100px;
+  padding: 10px 5px;
+  display: flex;
+  flex-direction: column;
+  width: 98%;
+  gap: 20px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  padding-top: 4px;
   &::-webkit-scrollbar {
     display: none;
   }
